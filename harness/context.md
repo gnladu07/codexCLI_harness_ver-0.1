@@ -1,407 +1,177 @@
 
-# Project Context
+# Project Context - Member Management
 
-## 1. Context 운영 원칙
+## 1. Context 기본 정보
 
-### 1.1. 목적
-
-본 문서는 프로젝트의 목적, 요구사항, 기술 환경,
-비즈니스 정책 및 설계 정보를 정의한다.
-
-모든 에이전트는 동일한 프로젝트 정보를 기반으로
-설계, 구현 및 검증을 수행해야 한다.
-
-적용 대상:
-
-- Orchestrator
-- Planner Agent
-- Developer Agent
-- Reviewer Agent
-
-본 문서는 AGENTS.md 및 harness/rules.md와
-함께 사용한다.
-
-
-### 1.2. 문서 기본 정보
-
-- Document Name: Project Context
 - Document Version: 1.0.0
-- Project Name: TBD
-- Last Updated: TBD
-- Author: TBD
-- Project Status: NOT_STARTED
-
-Project Status:
-
-- NOT_STARTED: 개발 시작 전
-- PLANNING: 기획 및 설계
-- IN_DEVELOPMENT: 개발 진행 중
-- TESTING: 테스트 진행 중
-- RELEASED: 배포 완료
-- MAINTENANCE: 유지보수
-
-
-### 1.3. 정보 상태 정의
-
-프로젝트 정보는 다음 상태로 구분한다.
-
-- CONFIRMED: 확정된 정보
-- PROPOSED: 제안된 정보
-- TBD: 미확정 정보
-- DEPRECATED: 폐기된 정보
-- NOT_APPLICABLE: 적용 대상이 아닌 정보
-
-TBD 항목을 확정된 정보로 간주하지 않는다.
-
-예시 또는 참고 자료를 실제 요구사항으로
-임의 해석하지 않는다.
-
-PROPOSED 항목은 승인되기 전까지
-확정된 정책으로 적용하지 않는다.
-
-
-### 1.4. 정보 확인 및 충돌 처리
-
-다음 정보를 작업 목적에 따라 확인한다.
-
-- 사용자의 현재 작업 요청
-- 승인된 프로젝트 요구사항
-- 승인된 기술 및 설계 문서
-- 실제 프로젝트 소스 코드
-- 실제 빌드 및 환경 설정
-- 데이터베이스 스키마
-- API 계약
-- context.md
-
-현재 구현 상태는 실제 코드와 설정을 기준으로
-확인한다.
-
-목표 구현 상태는 승인된 요구사항 및
-설계 문서를 기준으로 판단한다.
-
-실제 구현과 요구사항이 서로 다르면
-이를 임의로 동일한 상태라고 판단하지 않는다.
-
-중대한 정보 충돌이 발생하면
-Orchestrator에게 해당 내용을 보고한다.
-
-AGENTS.md 및 rules.md의 필수 규칙을
-context.md만으로 임의 해제하지 않는다.
-
-
-### 1.5. 미확정 정보 처리
-
-미확정 정보는 다음과 같이 처리한다.
-
-구현에 영향이 적은 항목:
-
-- 기존 프로젝트 관례를 우선 확인한다.
-- 안전하고 단순한 기본값을 고려한다.
-- 위임받은 범위에서 합리적으로 결정한다.
-- 선택한 기본값과 결정 근거를 기록한다.
-
-구현에 중대한 영향을 주는 항목:
-
-- 임의로 확정하지 않는다.
-- 관련 요구사항과 문서를 추가 확인한다.
-- 필요한 경우 사용자에게 확인한다.
-- 해결할 수 없는 경우 BLOCKED로 보고한다.
-
-다음 항목은 특히 주의한다.
-
-- 인증 및 인가 정책
-- 개인정보 처리 정책
-- 결제 및 환불 정책
-- 데이터 삭제 정책
-- 운영 데이터베이스 변경
-- 외부 유료 서비스 도입
-- 시스템 아키텍처 변경
-- 기존 API 계약의 파괴적 변경
-
-
-## 2. 프로젝트 개요
-
-### 2.1. 프로젝트 기본 정보
-
-| 항목 | 내용 | 상태 |
-|---|---|---|
-| 프로젝트명 | TBD | TBD |
-| 서비스 유형 | 웹 또는 앱 백엔드 | PROPOSED |
-| 프로젝트 목적 | TBD | TBD |
-| 주요 사용자 | TBD | TBD |
-| 개발 단계 | 신규 프로젝트 | PROPOSED |
-| 개발 기간 | TBD | TBD |
-| 목표 배포 환경 | TBD | TBD |
-
-
-### 2.2. 프로젝트 목적
-
-본 프로젝트가 해결하려는 문제:
-
-- TBD
-
-사용자에게 제공하는 핵심 가치:
-
-- TBD
-
-프로젝트의 최종 목표:
-
-- TBD
-
-
-### 2.3. 서비스 설명
-
-서비스의 주요 동작 방식:
-
-- TBD
-
-핵심 사용자 흐름:
-
-1. TBD
-2. TBD
-3. TBD
-
-
-### 2.4. 개발 범위
-
-In Scope:
-
-- TBD
-
-Out of Scope:
-
-- TBD
-
-현재 개발 범위를 벗어나는 기능은
-사용자 승인 없이 추가하지 않는다.
-
-
-### 2.5. 개발 단계
-
-Phase 1:
-
-- MVP 핵심 기능
-- 세부 내용: TBD
-
-Phase 2:
-
-- 추가 기능 및 개선
-- 세부 내용: TBD
-
-Phase 3:
-
-- 성능 및 운영 고도화
-- 세부 내용: TBD
-
-현재 개발 대상이 아닌 기능을
-선행 구현하지 않는다.
-
-
-## 3. 사용자 및 역할
-
-### 3.1. 사용자 유형
-
-| Role ID | 사용자 유형 | 설명 | 상태 |
-|---|---|---|---|
-| ROLE-001 | TBD | TBD | TBD |
-| ROLE-002 | TBD | TBD | TBD |
-
-
-### 3.2. 사용자별 주요 기능
-
-ROLE-001:
-
-- TBD
-
-ROLE-002:
-
-- TBD
-
-
-### 3.3. 권한 매트릭스
-
-| 기능 | ROLE-001 | ROLE-002 |
-|---|---|---|
-| 기능 1 | TBD | TBD |
-| 기능 2 | TBD | TBD |
-| 기능 3 | TBD | TBD |
-
-권한 상태:
-
-- ALLOW: 접근 허용
-- DENY: 접근 금지
-- CONDITIONAL: 특정 조건에서 허용
-- TBD: 미확정
-
-TBD 권한을 ALLOW로 간주하지 않는다.
-
-보호 대상 리소스는 승인된 권한 정책에
-따라서만 접근할 수 있도록 구현한다.
-
-
-### 3.4. 사용자 계정 정책
-
-- 회원가입 대상: TBD
-- 관리자 계정 생성 방식: TBD
-- 계정 활성화 방식: TBD
-- 계정 정지 정책: TBD
-- 탈퇴 정책: TBD
-- 다중 역할 허용 여부: TBD
+- Project Name: Member Management
+- Project Status: PLANNING
+- Project Type: Harness Validation Project
+
+본 문서는 Codex CLI 기반 멀티 에이전트
+하네스의 실제 개발 능력을 검증하기 위한
+회원 관리 프로젝트의 요구사항을 정의한다.
+
+본 문서의 명시적인 프로젝트 정책은
+현재 테스트 프로젝트의 목표 기준으로 사용한다.
+
+실제 구현 상태는 소스 코드와 설정을 확인한다.
+
+AGENTS.md 및 harness/rules.md의
+필수 개발 규칙을 준수한다.
+
+문서에 정의되지 않은 주요 비즈니스 정책은
+임의로 추가하지 않는다.
+
+
+## 2. 프로젝트 목적
+
+본 프로젝트의 목적은 다음과 같다.
+
+- 실제 Custom Subagent 호출 검증
+- Planner의 요구사항 분석 및 설계 검증
+- Developer의 기능 구현 검증
+- Reviewer의 독립 코드 리뷰 검증
+- 에이전트 간 산출물 전달 검증
+- Hexagonal Architecture 준수 검증
+- SOLID 원칙 준수 검증
+- 테스트 기반 개발 검증
+- 수정 및 재검증 루프 검증
+- 독립 작업의 병렬 실행 검증
+- 최종 Quality Gate 검증
+
+서비스 기능은 간단한 회원 관리로 제한한다.
+
+운영 서비스 배포는 수행하지 않는다.
+
+
+## 3. 개발 범위
+
+### 3.1. In Scope
+
+- Spring Boot 프로젝트 초기화
+- 회원 등록
+- 회원 단건 조회
+- 회원 목록 조회
+- 회원 닉네임 수정
+- 회원 삭제
+- 입력값 검증
+- 이메일 중복 방지
+- 공통 예외 처리
+- MySQL 데이터베이스 연동
+- DB 마이그레이션
+- 단위 테스트
+- Web Adapter 테스트
+- MySQL 통합 테스트
+- ArchUnit 아키텍처 테스트
+- Gradle 빌드 검증
+
+### 3.2. Out of Scope
+
+- 로그인
+- 비밀번호 관리
+- JWT 인증
+- Spring Security 인증 및 인가
+- 관리자 권한 관리
+- OAuth
+- 회원 등급
+- 결제
+- Redis
+- Kafka
+- MSA
+- 프론트엔드
+- 운영 서버 배포
+- Kubernetes
+
+Out of Scope 기능을 임의로 구현하지 않는다.
 
 
 ## 4. 기술 스택
 
-### 4.1. Backend
-
-| 구분 | 기술 | 버전 및 상태 |
+| 항목 | 기술 | 버전 |
 |---|---|---|
-| Language | Java | 17 / CONFIRMED |
-| Framework | Spring Boot | 버전 TBD |
-| Build Tool | Gradle | 버전 TBD |
-| Web | Spring MVC | PROPOSED |
-| ORM | Spring Data JPA | PROPOSED |
-| Validation | Jakarta Bean Validation | PROPOSED |
-| Security | Spring Security | 적용 범위 TBD |
+| Language | Java | 17 |
+| Framework | Spring Boot | 3.5.16 |
+| Build Tool | Gradle Wrapper | 8.14.3 |
+| Build DSL | Groovy | - |
+| Packaging | Jar | - |
+| Web | Spring MVC | Boot 관리 버전 |
+| ORM | Spring Data JPA | Boot 관리 버전 |
+| Validation | Jakarta Bean Validation | Boot 관리 버전 |
+| Database | MySQL | 8.0 |
+| Migration | Flyway | Boot 호환 버전 |
+| Unit Test | JUnit Jupiter | Boot 관리 버전 |
+| Mocking | Mockito | Boot 관리 버전 |
+| Web Test | MockMvc | Boot 관리 버전 |
+| Integration Test | Testcontainers MySQL | 호환 버전 |
+| Architecture Test | ArchUnit | 호환 안정 버전 |
+| Version Control | Git | - |
 
-Java 17과 호환되는 안정적인 버전을 사용한다.
+Spring Boot의 의존성 관리 기능을 우선 사용한다.
 
-구체적인 프레임워크 및 라이브러리 버전은
-사용자 요구사항과 실제 빌드 설정을 확인한다.
+ArchUnit 등 별도로 버전 지정이 필요한 도구는
+Java 17 호환 안정 버전을 선정하고 기록한다.
 
-
-### 4.2. Database
-
-| 구분 | 기술 | 상태 |
-|---|---|---|
-| RDBMS | MySQL | 기본 개발 표준 |
-| Database Version | TBD | TBD |
-| ORM | Spring Data JPA | 기본 개발 표준 |
-| Migration | TBD | TBD |
-| Cache | TBD | TBD |
-
-캐시, 메시지 브로커 및 추가 데이터베이스는
-실제 필요성과 승인된 기술 결정을 기준으로 적용한다.
+지정 버전을 사용할 수 없는 경우
+임의로 변경하지 않고 원인을 보고한다.
 
 
-### 4.3. Testing
+## 5. 프로젝트 초기 설정
 
-| 구분 | 기술 | 상태 |
-|---|---|---|
-| Unit Test | JUnit 5 | CONFIRMED |
-| Mocking | Mockito | 기본 개발 표준 |
-| Web Test | MockMvc | PROPOSED |
-| Integration Test | Spring Boot Test | PROPOSED |
-| Database Test | Testcontainers | OPTIONAL |
-| Architecture Test | ArchUnit | OPTIONAL |
-| Coverage | JaCoCo | OPTIONAL |
+- Group: com.example
+- Artifact: member-management
+- Name: member-management
+- Version: 0.0.1-SNAPSHOT
+- Base Package: com.example.membermanagement
+- Main Class: MemberManagementApplication
+- Java Toolchain: 17
+- Application Port: 8080
 
-OPTIONAL은 선택적 도구를 의미한다.
+프로젝트 초기 설정은 기존 하네스 파일이 있는
+현재 저장소 루트를 기준으로 수행한다.
 
-선택적 도구를 설치된 상태로 간주하지 않는다.
+불필요하게 중첩 프로젝트를 생성하지 않는다.
 
-
-### 4.4. Infrastructure
-
-| 구분 | 기술 | 상태 |
-|---|---|---|
-| OS | TBD | TBD |
-| Cloud | TBD | TBD |
-| Container | TBD | TBD |
-| CI/CD | TBD | TBD |
-| Monitoring | TBD | TBD |
-| Logging | TBD | TBD |
-| Version Control | Git | CONFIRMED |
+기존 하네스 파일을 삭제하거나 덮어쓰지 않는다.
 
 
-### 4.5. 기술 스택 변경 정책
+## 6. 시스템 아키텍처
 
-기존 기술 스택을 우선한다.
+- System Architecture: Monolith
+- Internal Architecture: Hexagonal Architecture
+- Design Principles: SOLID, KISS, DRY, YAGNI
 
-새로운 기술이 필요한 경우 다음을 검토한다.
+Domain 계층은 순수 Java로 구현한다.
 
-- 도입 목적
-- 기존 기술로 대체 가능 여부
-- 호환성
-- 유지보수 비용
-- 보안 영향
-- 운영 복잡도
-- 대체 방안
+Application Service에서 Spring의
+@Service 및 @Transactional 사용을 허용한다.
 
-중대한 기술 스택 변경은 승인 후 적용한다.
+Domain Model과 JPA Entity는 분리한다.
 
+Controller는 Input Port를 호출한다.
 
-## 5. 시스템 아키텍처
+Application Service는 Output Port에 의존한다.
 
-### 5.1. 외부 시스템 구조
-
-System Architecture: TBD
-
-선택 가능한 구조:
-
-- Monolith
-- Modular Monolith
-- Microservices Architecture
-
-프로젝트 요구사항과 규모를 기준으로 결정한다.
-
-Hexagonal Architecture를 적용한다는 이유만으로
-MSA를 자동 선택하지 않는다.
-
-이미 확정된 시스템 구조가 있는 경우
-해당 구조를 우선한다.
+Persistence Adapter는 Output Port를 구현한다.
 
 
-### 5.2. 내부 아키텍처
+## 7. 패키지 구조
 
-Internal Architecture:
+Base Package:
 
-- Hexagonal Architecture
-- Status: CONFIRMED
+com.example.membermanagement
 
-Design Principles:
+기본 구조:
 
-- SOLID
-- KISS
-- DRY
-- YAGNI
-- Separation of Concerns
-
-상세한 계층 및 의존성 규칙은
-harness/rules.md를 따른다.
-
-
-### 5.3. 기본 애플리케이션 구조
-
-    Client
-        |
-    Input Adapter
-        |
-    Input Port
-        |
-    Application Service
-        |
-    Domain / Output Port
-        |
-    Output Adapter
-        |
-    External System
-
-위 구조는 개념적인 실행 흐름을 표현한다.
-
-소스 코드 의존성 방향은
-harness/rules.md의 아키텍처 규칙을 따른다.
-
-
-### 5.4. 프로젝트 패키지
-
-Base Package: TBD
-
-기본 패키지 구성:
-
-    {base-package}
+    com.example.membermanagement
     |
-    |-- {domain}
+    |-- MemberManagementApplication.java
+    |
+    |-- member
     |   |-- domain
+    |   |   |-- model
+    |   |   |-- exception
+    |   |
     |   |-- application
     |   |   |-- port
     |   |   |   |-- in
@@ -409,1411 +179,764 @@ Base Package: TBD
     |   |   |-- service
     |   |   |-- command
     |   |   |-- query
+    |   |   |-- result
     |   |
     |   |-- adapter
     |       |-- in
+    |       |   |-- web
+    |       |       |-- dto
+    |       |
     |       |-- out
+    |           |-- persistence
+    |               |-- entity
+    |               |-- repository
+    |               |-- mapper
     |
     |-- global
-        |-- config
         |-- exception
-        |-- security
+        |-- config
 
-현재 기능에 필요한 패키지만 생성한다.
+현재 기능에 필요하지 않은 빈 패키지는
+생성하지 않아도 된다.
 
-TBD 또는 Placeholder를 실제 패키지명으로
-그대로 사용하지 않는다.
-
-
-### 5.5. 모듈 및 서비스 구성
-
-| Module ID | 모듈 또는 서비스명 | 책임 | 상태 |
-|---|---|---|---|
-| MOD-001 | TBD | TBD | TBD |
-| MOD-002 | TBD | TBD | TBD |
-
-모듈 간 의존성:
-
-- TBD
-
-서비스 간 통신 방식:
-
-- TBD
-
-데이터 소유권:
-
-- TBD
-
-시스템 구조가 확정되기 전까지
-불필요한 서비스 분리나 분산 통신을 구현하지 않는다.
+구체적인 클래스 구성은 Planner가 설계한다.
 
 
-## 6. 도메인 정의
+## 8. 사용자 및 보안 범위
 
-### 6.1. 도메인 목록
+본 프로젝트는 로컬 전용 테스트 시스템이다.
 
-| Domain ID | 도메인명 | 주요 책임 | 우선순위 | 상태 |
-|---|---|---|---|---|
-| DOM-001 | TBD | TBD | TBD | TBD |
-| DOM-002 | TBD | TBD | TBD | TBD |
+별도의 사용자 인증은 구현하지 않는다.
 
+실제 개인정보를 사용하지 않는다.
 
-### 6.2. 도메인 상세 정의 템플릿
+애플리케이션은 기본적으로
+127.0.0.1에서만 접근 가능하도록 구성한다.
 
-Domain ID: DOM-001
+외부 네트워크에 공개하거나
+운영 환경에 배포하지 않는다.
 
-Domain Name: TBD
-
-Description:
-
-- TBD
-
-Responsibility:
-
-- TBD
-
-Aggregate:
-
-- TBD
-
-Domain Entity:
-
-- TBD
-
-Value Object:
-
-- TBD
-
-Domain Service:
-
-- TBD
-
-Business Policy:
-
-- TBD
-
-Domain Event:
-
-- TBD
-
-Related Domain:
-
-- TBD
-
-Data Ownership:
-
-- TBD
-
-Out of Scope:
-
-- TBD
-
-실제 도메인 요구사항에 필요한 구성요소만
-설계하고 구현한다.
+보안 기능 제외는 본 테스트 프로젝트에만 적용한다.
 
 
-### 6.3. 도메인 용어 사전
+## 9. 도메인 정의
 
-| 용어 | 영문명 | 비즈니스 의미 |
+### DOM-001: Member
+
+책임:
+
+- 회원 정보 생성
+- 회원 정보 관리
+- 닉네임 변경
+- 회원 정보의 유효성 유지
+
+주요 속성:
+
+- Member ID
+- Email
+- Nickname
+- Created At
+- Updated At
+
+회원 식별자와 이메일은 변경할 수 없다.
+
+닉네임만 수정할 수 있다.
+
+필요한 Value Object의 구성은
+Planner가 실제 설계 과정에서 결정한다.
+
+
+## 10. 비즈니스 정책
+
+### POL-001: 회원 식별자
+
+- UUID를 사용한다.
+- 데이터베이스에는 CHAR(36)으로 저장한다.
+- 외부 API에는 UUID 문자열을 사용한다.
+- 식별자는 애플리케이션에서 생성한다.
+
+
+### POL-002: 이메일
+
+- 이메일은 필수값이다.
+- 유효한 이메일 형식이어야 한다.
+- 최대 길이는 254자이다.
+- 입력값의 앞뒤 공백은 제거한다.
+- Locale.ROOT를 기준으로 소문자 정규화한다.
+- 정규화된 이메일은 중복 등록할 수 없다.
+- 데이터베이스 UNIQUE 제약조건으로
+  최종 중복 등록을 방지한다.
+- 이메일 변경은 허용하지 않는다.
+
+소문자 정규화는 이번 테스트 프로젝트에서
+선택한 계정 식별 정책이다.
+
+
+### POL-003: 닉네임
+
+- 닉네임은 필수값이다.
+- 입력값의 앞뒤 공백은 제거한다.
+- 정규화된 닉네임 길이는 2자 이상
+  30자 이하여야 한다.
+- 공백만 입력한 값은 허용하지 않는다.
+- 닉네임 중복은 허용한다.
+
+
+### POL-004: 회원 조회
+
+- 존재하지 않는 회원은 HTTP 404를 반환한다.
+- 유효하지 않은 UUID 형식은 HTTP 400을 반환한다.
+- 조회 요청은 회원 상태를 변경하지 않는다.
+
+
+### POL-005: 회원 수정
+
+- 닉네임만 수정할 수 있다.
+- 회원 식별자와 이메일은 유지한다.
+- 생성일은 변경하지 않는다.
+- 수정이 발생하면 수정일을 갱신한다.
+- 동일 닉네임 요청은 변경 없는 성공으로 처리한다.
+- 동일 닉네임 요청에서는 수정일을 유지한다.
+
+
+### POL-006: 회원 삭제
+
+- Hard Delete를 사용한다.
+- 존재하는 회원만 삭제할 수 있다.
+- 정상 삭제 시 HTTP 204를 반환한다.
+- 존재하지 않는 회원 삭제 시 HTTP 404를 반환한다.
+- 삭제된 회원은 조회할 수 없다.
+
+
+### POL-007: 페이지네이션
+
+- 페이지 번호는 0부터 시작한다.
+- 기본 페이지 크기는 20이다.
+- 최대 페이지 크기는 100이다.
+- page는 0 이상이어야 한다.
+- size는 1 이상 100 이하여야 한다.
+- 잘못된 페이지 조건은 HTTP 400을 반환한다.
+- 존재하는 데이터가 없으면 빈 목록을 반환한다.
+- createdAt DESC, memberId ASC 순으로 정렬한다.
+
+
+### POL-008: 날짜 및 시간
+
+- 시간 데이터는 UTC 기준으로 관리한다.
+- API 응답은 ISO-8601 UTC 형식으로 제공한다.
+- DB에는 DATETIME(6)으로 저장한다.
+- createdAt은 최초 등록 시 설정한다.
+- updatedAt은 최초 등록 시 createdAt과 동일하다.
+- 실제 상태 변경 시 updatedAt을 갱신한다.
+- DB 정밀도와 Java 시간 타입 간 차이를 고려한다.
+
+
+### POL-009: 입력 필드 제한
+
+- 요청 DTO에 정의되지 않은 필드를 허용하지 않는다.
+- 회원 수정 요청에 email 또는 memberId가
+  포함된 경우 HTTP 400을 반환한다.
+- 잘못된 JSON 요청은 HTTP 400을 반환한다.
+
+
+## 11. 기능 요구사항
+
+| Requirement ID | 기능 | 우선순위 |
 |---|---|---|
-| TBD | TBD | TBD |
+| FR-001 | 회원 등록 | MUST |
+| FR-002 | 회원 단건 조회 | MUST |
+| FR-003 | 회원 목록 조회 | MUST |
+| FR-004 | 회원 닉네임 수정 | MUST |
+| FR-005 | 회원 삭제 | MUST |
+| FR-006 | 입력값 검증 | MUST |
+| FR-007 | 공통 예외 응답 | MUST |
 
-동일한 비즈니스 개념에 대해
-서로 다른 용어를 무분별하게 사용하지 않는다.
+위 요구사항 외의 기능을 추가하지 않는다.
 
-클래스명, API명 및 데이터베이스 명칭은
-확정된 도메인 용어를 우선한다.
 
+## 12. 데이터베이스
 
-### 6.4. 도메인 간 관계
+### 12.1. 기본 정보
 
-| Source Domain | Target Domain | 관계 및 목적 | 연동 방식 |
-|---|---|---|---|
-| TBD | TBD | TBD | TBD |
+- DBMS: MySQL 8.0
+- Local Database: member_management
+- Local Host: 127.0.0.1
+- Local Port: 3307
+- Character Set: utf8mb4
+- Email Comparison: utf8mb4_bin
+- Migration Tool: Flyway
+- Hibernate ddl-auto: validate
 
-다른 도메인의 내부 구현에 직접 의존하지 않는다.
+DB 접속 정보는 환경 변수로 관리한다.
 
-도메인 간 순환 의존성을 방지한다.
+운영 데이터베이스 및 공유 데이터베이스는
+사용하지 않는다.
 
 
-## 7. 비즈니스 정책
-
-### 7.1. 정책 목록
-
-| Policy ID | 도메인 | 정책명 | 내용 | 상태 |
-|---|---|---|---|---|
-| POL-001 | TBD | TBD | TBD | TBD |
-| POL-002 | TBD | TBD | TBD | TBD |
-
-
-### 7.2. 정책 상세 템플릿
-
-Policy ID: POL-001
-
-Policy Name: TBD
-
-Purpose:
-
-- TBD
-
-Precondition:
-
-- TBD
-
-Business Rule:
-
-- TBD
-
-Success Condition:
-
-- TBD
-
-Failure Condition:
-
-- TBD
-
-Exception Policy:
-
-- TBD
-
-Related Requirement:
-
-- TBD
-
-Related Test:
-
-- TBD
-
-
-### 7.3. 상태 및 상태 전이
-
-| Domain | Current Status | Next Status | Condition |
-|---|---|---|---|
-| TBD | TBD | TBD | TBD |
-
-허용되지 않은 상태 변경은
-비즈니스 규칙에 따라 방지한다.
-
-
-### 7.4. 데이터 처리 정책
-
-- 중복 데이터 처리: TBD
-- 삭제 정책: TBD
-- 데이터 복구 정책: TBD
-- 데이터 보존 기간: TBD
-- 개인정보 처리 정책: TBD
-- 데이터 변경 이력 정책: TBD
-
-
-### 7.5. 시간 및 숫자 정책
-
-- 서비스 기준 시간대: TBD
-- 데이터 저장 시간대: TBD
-- 날짜 표현 방식: TBD
-- 기본 화폐 단위: TBD
-- 금액 반올림 정책: TBD
-
-적용되지 않는 항목은
-NOT_APPLICABLE로 명시한다.
-
-
-## 8. 기능 요구사항
-
-### 8.1. 기능 요구사항 목록
-
-| Requirement ID | 도메인 | 기능명 | Priority | 상태 |
-|---|---|---|---|---|
-| FR-001 | TBD | TBD | MUST | TBD |
-| FR-002 | TBD | TBD | SHOULD | TBD |
-
-Priority:
-
-- MUST: 반드시 구현해야 하는 기능
-- SHOULD: 구현이 권장되는 기능
-- COULD: 선택적으로 구현 가능한 기능
-- WONT: 현재 개발 범위에서 제외되는 기능
-
-요구사항의 중요도와 구현 진행 상태를
-서로 혼동하지 않는다.
-
-
-### 8.2. 기능 상세 명세 템플릿
-
-Requirement ID: FR-001
-
-Feature Name: TBD
-
-Domain: TBD
-
-Priority: MUST
-
-Requirement Status: TBD
-
-Actor:
-
-- TBD
-
-Description:
-
-- TBD
-
-Precondition:
-
-- TBD
-
-Trigger:
-
-- TBD
-
-Main Flow:
-
-1. TBD
-2. TBD
-3. TBD
-
-Alternative Flow:
-
-1. TBD
-
-Exception Flow:
-
-1. TBD
-
-Postcondition:
-
-- TBD
-
-Related Policy:
-
-- TBD
-
-Related API:
-
-- TBD
-
-Related Database:
-
-- TBD
-
-Acceptance Criteria:
-
-- TBD
-
-
-### 8.3. 요구사항 변경 규칙
-
-새로운 요구사항은 기존 기능과
-충돌하는지 먼저 확인한다.
-
-기존 요구사항의 변경 이력을 유지한다.
-
-요구사항 변경으로 영향을 받는 항목을 확인한다.
-
-- Domain
-- API
-- Database
-- Security
-- Test
-- External System
-- Existing Feature
-
-
-### 8.4. 현재 작업 범위
-
-Current Milestone: TBD
-
-Target Requirements:
-
-- TBD
-
-Excluded Requirements:
-
-- TBD
-
-실제 작업 범위는 사용자의 현재 요청과
-승인된 개발 계획을 기준으로 확정한다.
-
-
-## 9. 비기능 요구사항
-
-### 9.1. 성능
-
-| Requirement ID | 항목 | 목표 | 상태 |
-|---|---|---|---|
-| NFR-001 | 예상 사용자 수 | TBD | TBD |
-| NFR-002 | 동시 접속자 수 | TBD | TBD |
-| NFR-003 | API 응답 시간 | TBD | TBD |
-| NFR-004 | 초당 요청 수 | TBD | TBD |
-| NFR-005 | 일일 요청 수 | TBD | TBD |
-| NFR-006 | 예상 데이터 규모 | TBD | TBD |
-
-성능 목표는 실제 서비스 요구사항에 따라 결정한다.
-
-부하 테스트나 측정 결과 없이
-목표 성능을 달성했다고 보고하지 않는다.
-
-
-### 9.2. 안정성
-
-- 목표 가용성: TBD
-- 장애 복구 목표 시간(RTO): TBD
-- 데이터 복구 목표 시점(RPO): TBD
-- 장애 대응 방식: TBD
-- 백업 정책: TBD
-
-
-### 9.3. 보안
-
-- 인증 방식: TBD
-- 접근 제어 방식: TBD
-- 민감정보 보호 정책: TBD
-- 데이터 암호화 범위: TBD
-- 보안 감사 정책: TBD
-
-
-### 9.4. 확장성
-
-- 수평 확장 필요 여부: TBD
-- 수직 확장 필요 여부: TBD
-- 서비스 분리 계획: TBD
-- 데이터 증가 대응 방식: TBD
-
-확장성을 이유로 현재 필요하지 않은
-복잡한 인프라를 선행 도입하지 않는다.
-
-
-### 9.5. 유지보수성
-
-- Hexagonal Architecture 준수
-- SOLID 원칙 준수
-- 일관된 코드 컨벤션
-- 테스트 가능한 구조
-- 주요 비즈니스 정책의 명확한 표현
-- 기술 결정 및 변경 이력 관리
-
-세부 개발 표준은 harness/rules.md를 따른다.
-
-
-## 10. 데이터베이스 컨텍스트
-
-### 10.1. 데이터베이스 기본 정보
-
-| 항목 | 내용 | 상태 |
-|---|---|---|
-| DBMS | MySQL | 기본 개발 표준 |
-| Version | TBD | TBD |
-| Database Name | TBD | TBD |
-| Character Set | TBD | TBD |
-| Collation | TBD | TBD |
-| Time Zone | TBD | TBD |
-| Identifier Strategy | TBD | TBD |
-| Migration Tool | TBD | TBD |
-
-
-### 10.2. 데이터베이스 참고 자료
-
-- ERD: TBD
-- DDL: TBD
-- 테이블 정의서: TBD
-- 마이그레이션 경로: TBD
-- 시드 데이터 경로: TBD
-
-이미 존재하는 ERD와 DDL을 우선 확인한다.
-
-승인된 스키마를 임의로 변경하지 않는다.
-
-
-### 10.3. 테이블 목록
-
-| Table ID | 테이블명 | 도메인 | 용도 | 상태 |
-|---|---|---|---|---|
-| TBL-001 | TBD | TBD | TBD | TBD |
-| TBL-002 | TBD | TBD | TBD | TBD |
-
-
-### 10.4. 테이블 상세 템플릿
+### 12.2. 테이블 정의
 
 Table ID: TBL-001
 
-Table Name: TBD
+Table Name: members
 
-Domain: TBD
-
-Description:
-
-- TBD
-
-Columns:
-
-| Column | Type | Nullable | Key | Default | Description |
-|---|---|---|---|---|---|
-| TBD | TBD | TBD | TBD | TBD | TBD |
-
-Primary Key:
-
-- TBD
-
-Foreign Key:
-
-- TBD
-
-Unique Constraint:
-
-- TBD
-
-Index:
-
-- TBD
-
-Check Constraint:
-
-- TBD
-
-Related Table:
-
-- TBD
-
-Delete Policy:
-
-- TBD
-
-
-### 10.5. 데이터베이스 명명 규칙
-
-- 테이블명 규칙: TBD
-- 컬럼명 규칙: TBD
-- PK 명명 규칙: TBD
-- FK 명명 규칙: TBD
-- Index 명명 규칙: TBD
-
-확정된 프로젝트 규칙이 없는 경우에는
-기존 스키마 관례와 일반적인 SQL 명명 규칙을
-검토하여 제안한다.
-
-
-### 10.6. 데이터 변경 정책
-
-- 신규 테이블 추가 정책: TBD
-- 기존 컬럼 변경 정책: TBD
-- 마이그레이션 실행 정책: TBD
-- 초기 데이터 적재 정책: TBD
-- 테스트 데이터 관리 정책: TBD
-- 운영 데이터 접근 정책: TBD
-
-실제 운영 데이터베이스의 조회 및 변경은
-승인된 작업 범위와 권한 정책을 따른다.
-
-운영 데이터를 개발 및 테스트 데이터로
-무단 복제하지 않는다.
-
-
-## 11. API 컨텍스트
-
-### 11.1. API 기본 정보
-
-| 항목 | 내용 | 상태 |
-|---|---|---|
-| API Style | REST API | PROPOSED |
-| Base Path | /api/v1 | PROPOSED |
-| Data Format | JSON | PROPOSED |
-| Authentication | TBD | TBD |
-| API Documentation | TBD | TBD |
-| Error Format | TBD | TBD |
-| Pagination | TBD | TBD |
-
-기존 API 계약이 존재한다면
-해당 계약을 우선 확인한다.
-
-
-### 11.2. API 목록
-
-| API ID | Method | URI | 기능 | 관련 요구사항 |
-|---|---|---|---|---|
-| API-001 | TBD | TBD | TBD | FR-001 |
-| API-002 | TBD | TBD | TBD | FR-002 |
-
-
-### 11.3. API 상세 명세 템플릿
-
-API ID: API-001
-
-API Name: TBD
-
-Domain: TBD
-
-Method: TBD
-
-URI: TBD
-
-Related Requirement: TBD
-
-Authentication: TBD
-
-Authorization: TBD
-
-Description:
-
-- TBD
-
-Path Variable:
-
-| Name | Type | Required | Description |
+| Column | Type | Nullable | Constraint |
 |---|---|---|---|
-| TBD | TBD | TBD | TBD |
+| member_id | CHAR(36) | NO | PRIMARY KEY |
+| email | VARCHAR(254) | NO | UNIQUE |
+| nickname | VARCHAR(30) | NO | - |
+| created_at | DATETIME(6) | NO | - |
+| updated_at | DATETIME(6) | NO | - |
 
-Query Parameter:
+추가 인덱스:
 
-| Name | Type | Required | Description |
+- idx_members_created_at_member_id
+
+회원 목록의 기본 정렬 조건에 맞춰 설계한다.
+
+
+### 12.3. DDL
+
+    CREATE TABLE members (
+        member_id CHAR(36) NOT NULL,
+        email VARCHAR(254)
+            COLLATE utf8mb4_bin NOT NULL,
+        nickname VARCHAR(30) NOT NULL,
+        created_at DATETIME(6) NOT NULL,
+        updated_at DATETIME(6) NOT NULL,
+
+        PRIMARY KEY (member_id),
+
+        CONSTRAINT uk_members_email
+            UNIQUE (email),
+
+        INDEX idx_members_created_at_member_id (
+            created_at DESC,
+            member_id ASC
+        )
+    ) ENGINE=InnoDB
+      DEFAULT CHARSET=utf8mb4;
+
+위 DDL을 Flyway 초기 마이그레이션에 반영한다.
+
+마이그레이션 파일:
+
+src/main/resources/db/migration/V1__create_members.sql
+
+이미 적용된 마이그레이션을 임의로 수정하지 않는다.
+
+
+### 12.4. 영속성 정책
+
+- Domain Model과 JPA Entity를 분리한다.
+- JPA Entity를 API 응답으로 반환하지 않는다.
+- Application Service가 JPA Repository에
+  직접 의존하지 않는다.
+- Persistence Adapter가 Output Port를 구현한다.
+- DB UNIQUE 제약조건 위반을 적절한
+  Application 오류로 변환한다.
+
+모든 DB 오류를 이메일 중복 오류로
+변환하지 않는다.
+
+동시 회원 등록에서도 중복 데이터가
+생성되지 않도록 검증한다.
+
+
+## 13. API 명세
+
+### 13.1. 공통 정책
+
+- Base Path: /api/v1
+- Data Format: JSON
+- 인증: NOT_APPLICABLE
+- 성공 응답: 리소스 또는 목록 DTO
+- 실패 응답: 공통 오류 DTO
+- 공통 응답 Wrapper: 사용하지 않음
+
+JPA Entity 및 Spring Data Page 객체를
+외부 API에 직접 반환하지 않는다.
+
+
+### 13.2. API 목록
+
+| API ID | Method | URI | Requirement |
 |---|---|---|---|
-| TBD | TBD | TBD | TBD |
+| API-001 | POST | /api/v1/members | FR-001 |
+| API-002 | GET | /api/v1/members/{id} | FR-002 |
+| API-003 | GET | /api/v1/members | FR-003 |
+| API-004 | PATCH | /api/v1/members/{id} | FR-004 |
+| API-005 | DELETE | /api/v1/members/{id} | FR-005 |
 
-Request Header:
 
-| Name | Required | Description |
-|---|---|---|
-| TBD | TBD | TBD |
+### 13.3. API-001: 회원 등록
+
+POST /api/v1/members
 
 Request Body:
 
-| Field | Type | Required | Validation |
-|---|---|---|---|
-| TBD | TBD | TBD | TBD |
+    {
+        "email": "member@example.com",
+        "nickname": "테스트회원"
+    }
 
-Success Response:
+Success Status:
 
-- HTTP Status: TBD
-- Response Header: TBD
-- Response Body: TBD
+- 201 Created
 
-Error Response:
+Success Header:
 
-| HTTP Status | Error Code | Description |
+- Location: /api/v1/members/{memberId}
+
+Response:
+
+- MemberResponse
+
+Failure Status:
+
+- 400: 잘못된 입력
+- 409: 이메일 중복
+
+
+### 13.4. API-002: 회원 단건 조회
+
+GET /api/v1/members/{id}
+
+Success Status:
+
+- 200 OK
+
+Response:
+
+- MemberResponse
+
+Failure Status:
+
+- 400: 잘못된 UUID 형식
+- 404: 회원 없음
+
+
+### 13.5. API-003: 회원 목록 조회
+
+GET /api/v1/members?page=0&size=20
+
+Success Status:
+
+- 200 OK
+
+Query Parameters:
+
+- page: Integer, Default 0
+- size: Integer, Default 20
+
+Response:
+
+    {
+        "content": [],
+        "page": 0,
+        "size": 20,
+        "totalElements": 0,
+        "totalPages": 0
+    }
+
+content의 각 요소는 MemberResponse 구조를 사용한다.
+
+Failure Status:
+
+- 400: 잘못된 페이지 조건
+
+
+### 13.6. API-004: 회원 수정
+
+PATCH /api/v1/members/{id}
+
+Request Body:
+
+    {
+        "nickname": "변경된회원"
+    }
+
+Success Status:
+
+- 200 OK
+
+Response:
+
+- MemberResponse
+
+Failure Status:
+
+- 400: 잘못된 입력 또는 UUID
+- 404: 회원 없음
+
+
+### 13.7. API-005: 회원 삭제
+
+DELETE /api/v1/members/{id}
+
+Success Status:
+
+- 204 No Content
+
+Response Body:
+
+- NONE
+
+Failure Status:
+
+- 400: 잘못된 UUID 형식
+- 404: 회원 없음
+
+
+### 13.8. MemberResponse
+
+    {
+        "memberId": "UUID 문자열",
+        "email": "member@example.com",
+        "nickname": "테스트회원",
+        "createdAt": "2026-11-25T00:00:00Z",
+        "updatedAt": "2026-11-25T00:00:00Z"
+    }
+
+위 날짜 및 식별자는 응답 구조 설명용이다.
+
+실제 응답에서는 저장된 값에 따라 반환한다.
+
+
+## 14. 예외 처리
+
+### 14.1. 오류 응답 구조
+
+    {
+        "code": "MEMBER_NOT_FOUND",
+        "message": "존재하지 않는 회원입니다."
+    }
+
+### 14.2. 오류 코드
+
+| Error Code | HTTP Status | 설명 |
 |---|---|---|
-| TBD | TBD | TBD |
+| INVALID_REQUEST | 400 | 유효하지 않은 요청 |
+| MEMBER_NOT_FOUND | 404 | 존재하지 않는 회원 |
+| DUPLICATE_EMAIL | 409 | 중복 이메일 |
+| INTERNAL_SERVER_ERROR | 500 | 예상하지 못한 서버 오류 |
 
-Business Rule:
+Domain Exception에는 HTTP 상태를
+직접 의존시키지 않는다.
 
-- TBD
+Web 계층에서 예외와 HTTP 상태를 매핑한다.
 
-Acceptance Criteria:
+내부 Stack Trace 또는 DB 정보를
+API 응답으로 노출하지 않는다.
 
-- TBD
 
+## 15. 개발 환경
 
-### 11.4. API 응답 정책
+### 15.1. 로컬 실행
 
-- 성공 응답 구조: TBD
-- 실패 응답 구조: TBD
-- 공통 응답 Wrapper 사용 여부: TBD
-- 오류 코드 명명 규칙: TBD
-- 날짜 및 시간 표현: TBD
+- OS: Windows
+- Terminal: Git Bash
+- Application Host: 127.0.0.1
+- Application Port: 8080
+- Local MySQL Port: 3307
+- Active Profile: local
 
-공통 응답 Wrapper의 사용 여부는
-기존 프로젝트 API 정책에 따라 결정한다.
+### 15.2. 환경 변수
 
-모든 응답을 임의의 공통 구조로
-일괄 변경하지 않는다.
+| Name | Required | Purpose |
+|---|---|---|
+| DB_URL | YES | JDBC Connection URL |
+| DB_USERNAME | YES | MySQL Username |
+| DB_PASSWORD | YES | MySQL Password |
+| MYSQL_ROOT_PASSWORD | Compose 실행 시 | Local MySQL 초기 설정 |
 
+실제 비밀번호를 Git에 저장하지 않는다.
 
-### 11.5. API 호환성
+.env.example은 변수명과
+설명만 제공한다.
 
-기존 클라이언트가 사용하는 API 계약을
-사용자 승인 없이 변경하지 않는다.
+.env는 Git 추적 대상에서 제외한다.
 
-Breaking Change가 필요한 경우
-영향 범위와 전환 방안을 기록한다.
 
+### 15.3. 로컬 DB 실행
 
-## 12. 인증 및 인가 컨텍스트
+Docker Compose를 사용한다.
 
-### 12.1. 인증 정책
+- MySQL 8.0 컨테이너
+- Host Port: 3307
+- Container Port: 3306
+- Host Bind: 127.0.0.1
+- Database: member_management
 
-- Authentication Type: TBD
-- Login Method: TBD
-- Password Policy: TBD
-- Token Policy: TBD
-- Session Policy: TBD
-- Login Failure Policy: TBD
-- Account Lock Policy: TBD
+Docker Compose와 Testcontainers의
+DB 실행 환경을 혼용하지 않는다.
 
 
-### 12.2. 인가 정책
-
-- Role Model: TBD
-- Permission Model: TBD
-- Resource Ownership Policy: TBD
-- Administrator Policy: TBD
-
-사용자가 전달한 역할 또는 사용자 ID를
-검증 없이 권한 판단에 사용하지 않는다.
-
-
-### 12.3. 인증 및 인가 흐름
-
-    Client
-        |
-    Authentication
-        |
-    Authorization
-        |
-    Application Use Case
-
-세부 인증 및 권한 검증 방식은
-승인된 보안 정책과 시스템 구조를 기준으로 한다.
-
-
-### 12.4. 토큰 정책
-
-JWT 또는 토큰 기반 인증을 사용하는 경우 작성한다.
-
-- Access Token Expiration: TBD
-- Refresh Token Expiration: TBD
-- Token Rotation: TBD
-- Token Revocation: TBD
-- Token Storage: TBD
-- Signing Algorithm: TBD
-- Issuer: TBD
-- Audience: TBD
-
-토큰 기반 인증을 사용하지 않는 경우
-NOT_APPLICABLE로 표시한다.
-
-
-### 12.5. 개인정보 및 보안 정책
-
-- 개인정보 수집 범위: TBD
-- 개인정보 조회 권한: TBD
-- 개인정보 보존 기간: TBD
-- 개인정보 삭제 정책: TBD
-- 데이터 마스킹 정책: TBD
-- 감사 로그 정책: TBD
-
-실제 비밀번호, 토큰 및 암호화 키를
-context.md에 작성하지 않는다.
-
-
-## 13. 외부 시스템 연동
-
-### 13.1. 연동 대상 목록
-
-| Integration ID | 시스템명 | 목적 | 연동 방식 | 상태 |
-|---|---|---|---|---|
-| INT-001 | TBD | TBD | TBD | TBD |
-
-
-### 13.2. 외부 시스템 상세 템플릿
-
-Integration ID: INT-001
-
-System Name: TBD
-
-Purpose:
-
-- TBD
-
-Protocol:
-
-- TBD
-
-Endpoint Reference:
-
-- TBD
-
-Authentication Method:
-
-- TBD
-
-Request Contract:
-
-- TBD
-
-Response Contract:
-
-- TBD
-
-Connection Timeout:
-
-- TBD
-
-Read Timeout:
-
-- TBD
-
-Retry Policy:
-
-- TBD
-
-Failure Handling:
-
-- TBD
-
-Rate Limit:
-
-- TBD
-
-Idempotency Policy:
-
-- TBD
-
-Test Environment:
-
-- TBD
-
-
-### 13.3. 이벤트 및 메시징
-
-이벤트 기반 통신을 사용하는 경우 작성한다.
-
-- Message Broker: TBD
-- Event Format: TBD
-- Delivery Policy: TBD
-- Retry Policy: TBD
-- Dead Letter Policy: TBD
-- Duplicate Handling: TBD
-- Outbox Policy: TBD
-
-Event 목록:
-
-| Event ID | Event Name | Producer | Consumer |
-|---|---|---|---|
-| EVT-001 | TBD | TBD | TBD |
-
-메시지 브로커가 필요하지 않은 프로젝트는
-NOT_APPLICABLE로 표시한다.
-
-
-### 13.4. 외부 서비스 사용 제약
-
-- 승인되지 않은 유료 API를 호출하지 않는다.
-- 실제 운영 외부 API를 임의로 테스트하지 않는다.
-- 외부 서비스의 이용 제한을 우회하지 않는다.
-- 민감정보를 승인되지 않은 시스템에 전달하지 않는다.
-
-
-## 14. 개발 환경
-
-### 14.1. 기본 환경
-
-| 항목 | 내용 |
-|---|---|
-| Development OS | Windows |
-| Terminal | Git Bash |
-| Java | 17 |
-| Build Tool | Gradle |
-| IDE | TBD |
-| Repository | TBD |
-| Base Package | TBD |
-
-Windows 및 Git Bash는 현재 하네스 구축
-환경의 기본값이다.
-
-다른 개발 환경에서는 실제 환경에 맞게 변경한다.
-
-
-### 14.2. 프로젝트 실행 환경
-
-- Local Application Port: TBD
-- Local Database Port: TBD
-- Local Database Name: TBD
-- Active Profile: TBD
-- External Dependencies: TBD
-
-실제 프로젝트 설정을 확인하기 전까지
-예시 포트 및 접속 정보를 확정값으로 사용하지 않는다.
-
-
-### 14.3. 환경 변수 목록
-
-| Variable | Purpose | Required | Default |
-|---|---|---|---|
-| DB_URL | DB 접속 주소 | TBD | NONE |
-| DB_USERNAME | DB 사용자명 | TBD | NONE |
-| DB_PASSWORD | DB 비밀번호 | TBD | NONE |
-| JWT_SECRET | JWT 서명용 비밀값 | TBD | NONE |
-
-위 환경 변수는 예시이다.
-
-실제 환경 변수명은 application.yml 및
-프로젝트 설정을 확인하여 결정한다.
-
-JWT를 사용하지 않는 프로젝트에는
-JWT_SECRET이 필요하지 않다.
-
-실제 민감정보 값은 기록하지 않는다.
-
-
-### 14.4. 환경별 설정
-
-Local:
-
-- 개발자 로컬 환경
-- 별도의 개발용 데이터 사용
-
-Test:
-
-- 테스트 전용 환경
-- 운영 시스템과 분리
-
-Development:
-
-- 개발 서버 환경
-- 상세 설정 TBD
-
-Production:
-
-- 실제 운영 환경
-- 접근 및 변경 정책 TBD
-
-
-### 14.5. 개발 명령어
-
-Java 버전 확인:
-
-    java -version
-
-Git 상태 확인:
-
-    git status
-
-Gradle 버전 확인:
+### 15.4. 실행 명령어
 
     ./gradlew --version
-
-애플리케이션 실행:
-
+    ./gradlew compileJava
+    ./gradlew test
+    ./gradlew build
     ./gradlew bootRun
 
-컴파일:
-
-    ./gradlew compileJava
-
-테스트:
-
-    ./gradlew test
-
-빌드:
-
-    ./gradlew build
-
-위 명령어는 Gradle Wrapper와 관련 플러그인이
-설정된 Spring Boot 프로젝트를 기준으로 한다.
-
-Windows PowerShell 또는 CMD에서는
+Windows 환경에 따라
 gradlew.bat를 사용할 수 있다.
 
-존재하지 않는 명령어 및 태스크를
-실행했다고 주장하지 않는다.
+실제 태스크 존재 여부를 확인한다.
 
 
-### 14.6. 인프라 및 배포
+## 16. 테스트 전략
 
-- Cloud Provider: TBD
-- Server Environment: TBD
-- Container Environment: TBD
-- Deployment Strategy: TBD
-- CI/CD Pipeline: TBD
-- Deployment Approval Policy: TBD
+### 16.1. Domain Unit Test
 
-배포는 승인된 운영 정책에 따라 수행한다.
+Spring Context 없이 테스트한다.
 
+검증 대상:
 
-## 15. 기술적 제약사항
-
-### 15.1. 필수 기술 제약
-
-- Java 17 호환성을 유지한다.
-- Hexagonal Architecture를 준수한다.
-- SOLID 원칙을 준수한다.
-- 기존 프로젝트의 기술 및 코드 규칙을 유지한다.
-- Domain 계층에 외부 기술을 직접 의존시키지 않는다.
-- 필수 테스트 및 검증을 수행한다.
+- 회원 생성
+- 이메일 정규화
+- 이메일 유효성
+- 닉네임 유효성
+- 닉네임 변경
+- 변경 불가능한 필드 유지
+- 동일 닉네임 처리
 
 
-### 15.2. 변경 제한
+### 16.2. Application Unit Test
 
-다음 항목은 승인 없이 변경하지 않는다.
+JUnit 및 Mockito를 사용한다.
 
-- Java 버전
-- Spring Boot 주요 버전
-- 시스템 아키텍처
-- 내부 아키텍처
-- 기존 데이터베이스 스키마
-- 인증 및 인가 정책
-- 기존 공개 API 계약
-- 운영 인프라 설정
+필요한 Output Port를 Mock 또는 Fake로 대체한다.
 
-사용자가 명시적으로 요청하고 승인한 변경은
-영향 범위를 확인한 후 수행할 수 있다.
+검증 대상:
 
-
-### 15.3. 기술 도입 제한
-
-다음 기술은 실제 필요성과
-승인된 기술 결정을 기준으로 도입한다.
-
-- Redis
-- Kafka
-- RabbitMQ
-- Elasticsearch
-- Kubernetes
-- 추가 데이터베이스
-- 분산 락
-- CQRS
-- Event Sourcing
-
-기술의 사용 자체를 프로젝트 목표로 삼지 않는다.
+- 회원 등록 유스케이스
+- 중복 이메일 처리
+- 회원 단건 조회
+- 회원 목록 조회
+- 회원 수정
+- 회원 삭제
+- 존재하지 않는 회원 예외
 
 
-### 15.4. 프로젝트별 추가 제약
+### 16.3. Web Adapter Test
 
-| Constraint ID | 제약사항 | 이유 | 상태 |
-|---|---|---|---|
-| CST-001 | TBD | TBD | TBD |
+MockMvc를 사용한다.
 
-프로젝트별 제약사항은
-승인된 요구사항에 따라 작성한다.
+검증 대상:
 
-
-### 15.5. 보안 및 비용 제약
-
-- 외부 서비스 사용 예산: TBD
-- 클라우드 운영 예산: TBD
-- 라이선스 제한: TBD
-- 개인정보 처리 제한: TBD
-- 운영 환경 접근 제한: TBD
-
-승인되지 않은 비용을 발생시키지 않는다.
+- API 경로 및 HTTP Method
+- HTTP 상태 코드
+- 요청 DTO 검증
+- 오류 응답
+- 잘못된 UUID 처리
+- 페이지네이션
+- 허용되지 않은 필드 처리
 
 
-## 16. 테스트 컨텍스트
+### 16.4. MySQL Integration Test
 
-### 16.1. 테스트 목표
+Testcontainers MySQL을 사용한다.
 
-- 핵심 비즈니스 규칙 검증
-- 기능 요구사항 검증
-- 실패 및 예외 경로 검증
-- 데이터 무결성 검증
-- 인증 및 인가 검증
-- 기존 기능 회귀 방지
+- MySQL 8.0
+- 테스트 전용 독립 컨테이너
+- Flyway 마이그레이션 적용
+- 실제 Repository 및 Persistence Adapter 검증
+- UNIQUE 제약조건 검증
+- UUID 영속성 검증
+- 날짜 정밀도 검증
+- 동시 등록 검증
+- 전체 CRUD 연동 검증
 
+테스트 컨테이너를 실행할 수 없으면
+필수 DB 검증은 BLOCKED로 처리한다.
 
-### 16.2. 테스트 환경
-
-| 항목 | 내용 |
-|---|---|
-| Unit Test Framework | JUnit 5 |
-| Mocking Framework | Mockito |
-| Test Database | TBD |
-| External API Test | TBD |
-| Test Profile | TBD |
-| Architecture Test | TBD |
-| Coverage Threshold | TBD |
-
-커버리지 기준이 확정되지 않은 경우
-임의의 수치를 필수 조건으로 지정하지 않는다.
+H2 결과를 MySQL 검증으로 보고하지 않는다.
 
 
-### 16.3. 테스트 데이터 정책
+### 16.5. Architecture Test
 
-- 운영 데이터 사용 금지
-- 테스트 전용 데이터 사용
-- 개인정보가 없는 가상 데이터 우선
-- 테스트 간 데이터 독립성 유지
-- 테스트 실행 후 필요한 정리 수행
+ArchUnit을 필수 검증 도구로 사용한다.
 
+검증 규칙:
 
-### 16.4. 테스트 케이스 목록
+- Domain은 Spring에 의존하지 않는다.
+- Domain은 Jakarta Persistence에 의존하지 않는다.
+- Domain은 Application 및 Adapter에 의존하지 않는다.
+- Application은 Adapter에 의존하지 않는다.
+- Input Adapter는 Output Adapter에 직접 의존하지 않는다.
+- Controller는 Spring Data Repository에
+  직접 의존하지 않는다.
 
-| Test ID | Requirement ID | 테스트 목적 | 유형 |
-|---|---|---|---|
-| TC-001 | FR-001 | TBD | UNIT |
-| TC-002 | FR-001 | TBD | INTEGRATION |
+ArchUnit 검사 규칙은 실제 패키지 구조에 맞춰
+구현한다.
 
-Test Type:
-
-- UNIT
-- SLICE
-- INTEGRATION
-- ARCHITECTURE
-- E2E
-- PERFORMANCE
-- SECURITY
+검사 대상 클래스가 존재하지 않아
+의미 없이 통과하는 테스트를 작성하지 않는다.
 
 
-### 16.5. 필수 검증 기준
+### 16.6. 테스트 실행 정책
 
-- 적용 대상 컴파일 성공
-- 적용 대상 단위 테스트 성공
-- 필수 통합 테스트 성공
-- 기존 테스트 회귀 없음
-- 최종 빌드 성공
-- 설정된 필수 품질 검사 통과
-- Reviewer 검토 PASS
+필수 테스트는 Gradle test 또는
+명시된 필수 통합 테스트 태스크에 연결한다.
 
-상세 테스트 규칙은
-harness/rules.md를 따른다.
+최종 build 또는 별도의 필수 검증 명령에
+모든 필수 테스트가 포함되어야 한다.
 
-작업 범위에 맞는 검증 계획은
-Planner가 구체적으로 정의한다.
+실패하는 테스트를 삭제하거나
+비활성화하지 않는다.
 
 
 ## 17. 인수 조건
 
-### 17.1. 인수 조건 정의
+### AC-001: 정상 회원 등록
 
-인수 조건은 해당 기능을 완료했다고
-판단하기 위한 구체적인 검증 기준이다.
+- HTTP 201 반환
+- UUID 식별자 반환
+- Location 헤더 반환
+- MySQL에 회원 정보 저장
 
-모호한 표현을 피하고
-확인 가능한 기대 결과를 정의한다.
+### AC-002: 중복 이메일
 
-잘못된 예:
+- 정규화된 동일 이메일의 중복 등록 차단
+- HTTP 409 반환
+- 기존 데이터 유지
 
-- 회원가입이 잘 동작해야 한다.
+### AC-003: 입력 검증
 
-권장 예:
+- 잘못된 이메일 또는 닉네임 차단
+- HTTP 400 반환
+- 유효하지 않은 데이터 미저장
 
-- 유효한 입력으로 회원가입하면
-  HTTP 201 응답을 반환한다.
-- 승인된 정책에 따라 회원 데이터가 저장된다.
-- 중복 이메일 요청은 정해진 오류를 반환한다.
-- 비밀번호가 평문으로 저장되지 않는다.
+### AC-004: 회원 단건 조회
 
-위 내용은 설명용 예시이며
-실제 프로젝트 요구사항을 의미하지 않는다.
+- 존재하는 회원 조회 시 HTTP 200
+- 저장된 회원 정보 반환
 
+### AC-005: 존재하지 않는 회원 조회
 
-### 17.2. 인수 조건 상세 템플릿
+- HTTP 404 반환
+- MEMBER_NOT_FOUND 오류 코드 반환
 
-Acceptance ID: AC-001
+### AC-006: 회원 목록
 
-Related Requirement: FR-001
+- HTTP 200 반환
+- 페이지 정보 제공
+- 정렬 조건 준수
+- 빈 데이터는 빈 목록 반환
 
-Related Policy: TBD
+### AC-007: 잘못된 페이지 조건
 
-Scenario: TBD
+- page가 음수이면 HTTP 400
+- size가 1 미만 또는 100 초과이면 HTTP 400
 
-Given:
+### AC-008: 회원 수정
 
-- TBD
+- HTTP 200 반환
+- 닉네임 변경
+- 이메일과 회원 ID 유지
+- 생성일 유지
+- 실제 변경 시 수정일 갱신
 
-When:
+### AC-009: 동일 닉네임 수정
 
-- TBD
+- HTTP 200 반환
+- 기존 데이터 유지
+- 수정일 유지
 
-Then:
+### AC-010: 회원 삭제
 
-- TBD
+- HTTP 204 반환
+- 응답 본문 없음
+- 실제 데이터 삭제
+- 삭제 이후 조회 시 HTTP 404
 
-Related API:
+### AC-011: 존재하지 않는 회원 수정 및 삭제
 
-- TBD
+- HTTP 404 반환
+- 새로운 데이터가 생성되지 않음
 
-Related Test:
+### AC-012: 잘못된 식별자
 
-- TBD
+- 잘못된 UUID 형식 요청 시 HTTP 400
 
+### AC-013: 허용되지 않은 필드
 
-### 17.3. 요구사항 추적 매트릭스
+- 이메일 변경 요청 등 차단
+- HTTP 400 반환
+- 기존 데이터 유지
 
-| Requirement | Policy | API | Table | Acceptance | Test |
-|---|---|---|---|---|---|
-| FR-001 | TBD | TBD | TBD | AC-001 | TC-001 |
-| FR-002 | TBD | TBD | TBD | TBD | TBD |
+### AC-014: 동시 중복 등록
 
-실제 연결 관계가 없는 항목은
-NOT_APPLICABLE로 표시한다.
+- 동일 이메일에 대한 동시 등록 요청 처리
+- 정확히 하나의 회원 데이터만 생성
+- 정상 요청 1건 성공
+- 나머지 중복 요청은 정해진 충돌 오류 반환
 
-추적 매트릭스는 요구사항 누락 및
-테스트 누락을 확인하는 데 사용한다.
+### AC-015: 아키텍처
 
-
-### 17.4. 기능 완료 판단
-
-개별 기능은 다음 기준을 충족해야 한다.
-
-- 확정된 기능 요구사항 구현
-- 적용 대상 비즈니스 정책 준수
-- 정의된 인수 조건 충족
-- 필요한 테스트 작성 및 통과
-- 관련 API 계약 준수
-- 필요한 데이터 무결성 유지
-- 필수 보안 정책 준수
-
-최종 작업 완료 판단은
-AGENTS.md 및 harness/rules.md를 따른다.
-
-
-## 18. 프로젝트 참고 자료
-
-### 18.1. 참고 자료 목록
-
-| Document ID | 문서명 | 경로 또는 URL | 상태 |
-|---|---|---|---|
-| DOC-001 | 요구사항 정의서 | TBD | TBD |
-| DOC-002 | IA | TBD | TBD |
-| DOC-003 | 화면 설계서 | TBD | TBD |
-| DOC-004 | ERD | TBD | TBD |
-| DOC-005 | DDL | TBD | TBD |
-| DOC-006 | API 명세서 | TBD | TBD |
-| DOC-007 | 이벤트 스토밍 | TBD | TBD |
-| DOC-008 | 기술 선정표 | TBD | TBD |
-| DOC-009 | 테스트 명세서 | TBD | TBD |
+- Hexagonal Architecture 준수
+- SOLID 원칙 준수
+- 필수 ArchUnit 테스트 통과
 
 
-### 18.2. 문서 참조 규칙
+## 18. 기술적 제약사항
 
-작업에 관련된 문서를 우선 확인한다.
+- Java 17 유지
+- Spring Boot 지정 버전 유지
+- Hexagonal Architecture 준수
+- SOLID 원칙 준수
+- 생성자 주입 사용
+- Domain과 JPA Entity 분리
+- 운영 데이터베이스 사용 금지
+- 민감정보 하드코딩 금지
+- 인증 및 인가 기능 추가 금지
+- 불필요한 외부 시스템 도입 금지
+- 기존 하네스 설정 무단 변경 금지
+- 사용자 승인 없는 Git push 및 배포 금지
 
-참고 자료가 존재하지 않는 경우
-존재한다고 가정하지 않는다.
 
-접근할 수 없는 외부 문서의 내용을
-임의로 추정하지 않는다.
+## 19. 개발 단계
 
-문서가 누락되었다고 해서
-항상 전체 개발 작업을 중단하지 않는다.
-
-현재 작업에 필수적인 정보인지 판단한다.
-
-
-### 18.3. 실제 소스 코드 참조
-
-| 항목 | 경로 |
+| Stage | 작업 |
 |---|---|
-| Main Source | src/main/java |
-| Test Source | src/test/java |
-| Resources | src/main/resources |
-| Build Configuration | build.gradle |
-| Project Settings | settings.gradle |
-
-위 경로는 일반적인 Gradle Java 프로젝트의
-기본 예시이다.
-
-실제 저장소의 구조를 우선 확인한다.
-
-
-### 18.4. Context 용량 관리
-
-대규모 요구사항 정의서, ERD, API 명세서를
-context.md에 모두 중복 복사하지 않는다.
-
-가능한 경우 다음 정보를 기록한다.
-
-- 핵심 정보 요약
-- 문서 ID
-- 문서 경로
-- 관련 도메인
-- 문서 버전
-- 승인 상태
-
-에이전트는 현재 작업에 관련된
-상세 자료만 추가로 확인한다.
-
-
-## 19. 기술 결정 및 미확정 사항
-
-### 19.1. Architecture Decision Record
-
-| ADR ID | 결정 사항 | 결정 근거 | 상태 |
-|---|---|---|---|
-| ADR-001 | Java 17 사용 | 공통 개발 환경 | CONFIRMED |
-| ADR-002 | Hexagonal Architecture | 기술 독립성 확보 | CONFIRMED |
-| ADR-003 | SOLID 준수 | 객체지향 설계 품질 | CONFIRMED |
-| ADR-004 | 도메인 중심 패키지 | 응집도 및 확장성 | CONFIRMED |
-| ADR-005 | 시스템 아키텍처 | TBD | TBD |
-
-
-### 19.2. 기술 결정 상세 템플릿
-
-ADR ID: ADR-XXX
-
-Title: TBD
-
-Status: PROPOSED
-
-Date: TBD
-
-Context:
-
-- TBD
-
-Options:
-
-1. TBD
-2. TBD
-
-Decision:
-
-- TBD
-
-Reason:
-
-- TBD
-
-Advantages:
-
-- TBD
-
-Disadvantages:
-
-- TBD
-
-Consequences:
-
-- TBD
-
-Approved By:
-
-- TBD
-
-
-### 19.3. 미확정 사항
-
-| Issue ID | 항목 | 필요한 결정 | 영향 범위 | 상태 |
-|---|---|---|---|---|
-| OPEN-001 | 프로젝트명 | 프로젝트 식별 정보 | 초기 설정 | OPEN |
-| OPEN-002 | 시스템 구조 | Monolith 또는 MSA 등 | 전체 구조 | OPEN |
-| OPEN-003 | 도메인 | 핵심 기능 범위 | 요구사항 | OPEN |
-| OPEN-004 | Spring Boot 버전 | 호환 버전 선정 | 빌드 환경 | OPEN |
-| OPEN-005 | 데이터베이스 | 스키마 및 접속 정책 | 데이터 계층 | OPEN |
-| OPEN-006 | 인증 방식 | 인증 및 인가 정책 | 보안 | OPEN |
-
-Issue Status:
-
-- OPEN
-- IN_REVIEW
-- RESOLVED
-- DEFERRED
-
-
-### 19.4. 가정 및 제안 기록
-
-| Assumption ID | 가정 또는 제안 | 근거 | 영향 | 상태 |
-|---|---|---|---|---|
-| ASM-001 | TBD | TBD | TBD | PROPOSED |
-
-가정과 확정된 요구사항을 구분한다.
-
-가정이 사실과 다를 경우
-관련 설계와 구현을 재검토한다.
-
-
-## 20. Context 관리 및 갱신
-
-### 20.1. 갱신 대상
-
-다음 변경이 발생하면
-관련 Context 갱신 필요 여부를 확인한다.
-
-- 프로젝트 목표 변경
-- 기능 요구사항 변경
-- 비즈니스 정책 변경
-- 데이터베이스 스키마 변경
-- API 계약 변경
-- 기술 스택 변경
-- 보안 정책 변경
-- 시스템 아키텍처 변경
-- 새로운 설계 결정
-
-
-### 20.2. 갱신 책임
-
-Orchestrator:
-
-- Context 변경 필요성 판단
-- 변경 영향 확인
-- 승인된 변경 내용 반영
-
-Planner:
-
-- 새로운 요구사항 및 설계 정보 제안
-- 기존 Context와의 충돌 확인
-
-Developer:
-
-- 실제 구현과 Context 간 차이 보고
-- 필요한 문서 변경 제안
-
-Reviewer:
-
-- 구현과 확정된 Context의 일치 여부 검토
-- 문서 불일치 및 누락 보고
-
-에이전트는 자신의 구현을 정당화하기 위해
-기존 요구사항을 임의 변경하지 않는다.
-
-
-### 20.3. 변경 이력
-
-| Version | Date | Description | Status |
-|---|---|---|---|
-| 1.0.0 | TBD | 초기 Context 템플릿 작성 | INITIAL |
-
-
-### 20.4. 작업 상태 관리
-
-context.md는 프로젝트의 지속적인 정보와
-승인된 요구사항을 관리한다.
-
-다음 정보는 별도의 작업 상태 영역에서
-관리하는 것을 원칙으로 한다.
-
-- 현재 실행 단계
-- 현재 Agent 실행 상태
-- 수정 루프 횟수
-- 일시적인 테스트 결과
-- 개별 작업 로그
-- 세션별 실행 기록
-
-향후 자동화 루프 구축 시
-별도의 State 파일을 사용한다.
-
-
-### 20.5. 신규 프로젝트 적용 방법
-
-신규 프로젝트를 시작할 때 다음을 수행한다.
-
-1. 프로젝트 기본 정보 작성
-2. 시스템 아키텍처 확인
-3. 기술 스택 확정
-4. 사용자 및 역할 정의
-5. 도메인 정의
-6. 비즈니스 정책 확인
-7. 기능 요구사항 작성
-8. 데이터베이스 정보 작성
-9. API 계약 확인
-10. 개발 환경 및 제약사항 확인
-11. 테스트 및 인수 조건 정의
-12. 참고 자료 연결
-
-모든 항목을 한 번에 확정할 필요는 없다.
-
-현재 작업에 필요한 필수 정보부터 확정한다.
-
-적용 대상이 아닌 정보는
-NOT_APPLICABLE로 표시한다.
-
-확정되지 않은 정보는 TBD 상태로 유지한다.
-
-
-### 20.6. 최종 운영 원칙
-
-Context의 목적은 에이전트에게
-가능한 많은 정보를 제공하는 것이 아니다.
-
-현재 작업에 필요한 정확하고 승인된 정보를
-적절한 시점에 제공하는 것이다.
-
-모든 에이전트는 다음 원칙을 준수한다.
-
-- 확인된 정보를 기반으로 작업한다.
-- 가정과 사실을 구분한다.
-- 미확정 정보를 임의 확정하지 않는다.
-- 실제 구현과 문서의 차이를 보고한다.
-- 불필요한 Context 중복을 방지한다.
-- 작업에 관련된 문서만 추가 확인한다.
-- 승인된 변경사항을 일관되게 반영한다.
-
-하네스의 실행 및 완료 판단은
-AGENTS.md와 harness/workflow.md를 따른다.
+| STAGE-001 | 프로젝트 기본 설정 |
+| STAGE-002 | 회원 등록 |
+| STAGE-003 | 단건 및 목록 조회 |
+| STAGE-004 | 회원 닉네임 수정 |
+| STAGE-005 | 회원 삭제 |
+| STAGE-006 | 통합 테스트 및 아키텍처 검증 |
+| STAGE-007 | 수정 루프 검증 |
+| STAGE-008 | 최종 Quality Gate |
+
+각 개발 요청은 독립적인 하네스 작업으로 관리한다.
+
+실제 작업 상태 및 수정 횟수는
+harness/workflow.md를 따른다.
+
+이전 작업이 완료되었다고 가정하지 않고
+실제 소스 코드와 검증 결과를 확인한다.
+
+
+## 20. 최종 완료 기준
+
+- FR-001부터 FR-007까지 구현
+- AC-001부터 AC-015까지 검증
+- 실제 Planner 호출
+- 실제 Developer 호출
+- 실제 Reviewer 호출
+- 최종 Reviewer PASS
+- 컴파일 성공
+- 단위 테스트 성공
+- Web Adapter 테스트 성공
+- MySQL 통합 테스트 성공
+- ArchUnit 테스트 성공
+- 최종 Gradle 빌드 성공
+- 미해결 차단 결함 없음
+
+필수 검증을 실행할 수 없다면
+COMPLETED로 처리하지 않는다.
+
+최종 작업 판단은 AGENTS.md,
+harness/rules.md 및 harness/workflow.md의
+기준을 모두 충족해야 한다.
