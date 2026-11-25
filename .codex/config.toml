@@ -1,0 +1,83 @@
+
+# ==================================================
+# Codex CLI Project Configuration
+# ==================================================
+#
+# 목적:
+# Codex CLI 기반 멀티 에이전트 하네스 실행 환경 설정
+#
+# 적용 대상:
+# - Orchestrator
+# - Planner
+# - Developer
+# - Reviewer
+#
+# ==================================================
+
+
+# --------------------------------------------------
+# 1. Model Configuration
+# --------------------------------------------------
+
+# 특정 모델을 강제로 고정하지 않는다.
+# 필요한 경우 아래 주석을 해제한다.
+#
+# model = "gpt-6.2-sol"
+
+# 메인 Orchestrator의 기본 추론 강도
+model_reasoning_effort = "medium"
+
+
+# --------------------------------------------------
+# 2. Sandbox Configuration
+# --------------------------------------------------
+
+# 프로젝트 작업 영역 내부의 파일 수정을 허용한다.
+# 모든 시스템 파일에 대한 접근을 허용하지 않는다.
+sandbox_mode = "workspace-write"
+
+
+# --------------------------------------------------
+# 3. Approval Configuration
+# --------------------------------------------------
+
+# 샌드박스 외부 접근 등 추가 권한이 필요한 경우
+# 사용자에게 승인을 요청한다.
+approval_policy = "on-request"
+
+
+# --------------------------------------------------
+# 4. Workspace Permission
+# --------------------------------------------------
+
+[sandbox_workspace_write]
+
+# 명령어 실행 환경에서 외부 네트워크 접근을
+# 기본적으로 허용하지 않는다.
+network_access = false
+
+
+# --------------------------------------------------
+# 5. Multi-Agent Configuration
+# --------------------------------------------------
+
+[agents]
+
+# Codex 공식 멀티 에이전트 기능 활성화
+enabled = true
+
+# 동시에 열어둘 수 있는 Subagent 스레드 수
+# 메인 Orchestrator는 이 제한에 포함되지 않는다.
+max_concurrent_threads_per_session = 4
+
+# Subagent의 기본 추론 강도
+# 개별 Agent TOML 파일에서 재정의할 수 있다.
+default_subagent_reasoning_effort = "medium"
+
+# 특정 Subagent 모델을 고정하려면
+# 사용 가능한 모델을 확인한 후 주석을 해제한다.
+#
+# default_subagent_model = "gpt-6.2-sol"
+
+# Agent 작업 중단 시 관련 메시지를 기록한다.
+interrupt_message = true
