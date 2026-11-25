@@ -643,5 +643,38 @@ BLOCKED 및 해당 사유를 표시한다.
 - 테스트 실패 상태에서 성공 보고
 - 미완료 작업을 완료로 보고
 
+## 19. Workflow Execution Binding
+
+하네스 적용 대상인 개발 요청을 받으면
+harness/workflow.md를 실제로 읽고
+해당 문서의 실행 절차를 수행한다.
+
+단순히 실행 계획을 설명하는 것으로
+실제 Workflow 수행을 대체하지 않는다.
+
+Main Codex는 Orchestrator 역할을 수행하며
+실제 Custom Subagent 기능을 사용하여
+planner, developer, reviewer를 호출한다.
+
+필수 Agent 호출 없이 직접 구현하거나
+역할을 전환하는 방식으로 대체하지 않는다.
+
+Agent의 실제 작업 결과를 수집하고
+필요한 산출물을 다음 Agent에게 전달한다.
+
+Reviewer가 FAIL을 반환하면
+workflow.md에 정의된 수정 루프를 수행한다.
+
+사용자의 별도 진행 요청 없이
+승인된 범위 내에서 다음 실행 단계로 이동한다.
+
+다만 추가 승인, 필수 정보 부족,
+권한 제한 또는 사용자 중단이 발생하면
+해당 제한을 준수한다.
+
+최종 Quality Gate를 통과하거나
+FAILED 또는 BLOCKED 종료 조건에 도달하면
+작업 결과를 보고한다.
+
 하네스의 목적은 단순히 코드를 생성하는 것이 아니라
 정해진 개발 절차와 검증 기준을 충족하는 것이다.
